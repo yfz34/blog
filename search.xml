@@ -78,4 +78,50 @@
         <tag>blog</tag>
       </tags>
   </entry>
+  <entry>
+    <title>使用Hexo部署至 GitHub Pages</title>
+    <url>/blog/2022/03/01/hexo_deploy_github/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此篇講解如何使用Hexo部署至Githb Pages</p>
+<span id="more"></span>
+
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><p>若沒有Github帳號，可至<a href="https://github.com/">Github</a>註冊一個帳號</p>
+<h2 id="New-Repository"><a href="#New-Repository" class="headerlink" title="New Repository"></a>New Repository</h2><p>至Github &#x3D;&gt; New 新增一個儲存庫<br><img src="/blog/2022/03/01/hexo_deploy_github/new-repository-page.png" alt="New Repository"><br>Repository name &#x3D;&gt; 可輸入自己想要的名稱<br>點擊”Create repository”新增</p>
+<h1 id="安裝套件"><a href="#安裝套件" class="headerlink" title="安裝套件"></a>安裝套件</h1><p>在Hexo專案輸入以下指令安裝套件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h1 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h1><p>至專案根目錄編輯.&#x2F;_config.yml，找到url及deploy，複製修改以下幾行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://github帳號.github.io/repository名稱</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/github帳號/repository名稱.git </span><br><span class="line">  branch: gh-pages</span><br><span class="line">  message: &quot;First Commit&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h1><p>第一次部署可直接執行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>若之後每次修改，可依序執行以下命令 clean &#x3D;&gt; generate &#x3D;&gt; deploy</p>
+<h2 id="清除快取及移除靜態頁面"><a href="#清除快取及移除靜態頁面" class="headerlink" title="清除快取及移除靜態頁面"></a>清除快取及移除靜態頁面</h2><p>若部署網站顯示有問題，可先執行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<h2 id="建立靜態頁面"><a href="#建立靜態頁面" class="headerlink" title="建立靜態頁面"></a>建立靜態頁面</h2><p>將專案打包成靜態網頁放置在.&#x2F;public中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<h2 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>發布成功後過幾分鐘至以下網址，查看有沒有部署成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://github帳號.github.io/repository名稱</span><br></pre></td></tr></table></figure>
+
+<h2 id="合併指令"><a href="#合併指令" class="headerlink" title="合併指令"></a>合併指令</h2><p>將generate、deploy合併指令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<h1 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h1><ul>
+<li><a href="https://hexo.io/zh-tw/docs/github-pages">https://hexo.io/zh-tw/docs/github-pages</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10272520">https://ithelp.ithome.com.tw/articles/10272520</a></li>
+<li><a href="https://hackmd.io/@Heidi-Liu/note-hexo-github#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub">https://hackmd.io/@Heidi-Liu/note-hexo-github#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+        <category>github pages</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+        <tag>github pages</tag>
+      </tags>
+  </entry>
 </search>
