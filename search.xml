@@ -124,4 +124,203 @@
         <tag>github pages</tag>
       </tags>
   </entry>
+  <entry>
+    <title>安裝.Net SDK</title>
+    <url>/blog/2022/04/06/dotent-install/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此篇講解如何在Windows及Ubuntu安裝.Net SDK，以.Net 5.0來做說明。</p>
+<span id="more"></span>
+
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p>作業系統為windows10 x64版本</p>
+<h2 id="下載-Net-SDK"><a href="#下載-Net-SDK" class="headerlink" title="下載.Net SDK"></a>下載.Net SDK</h2><p>至<a href="https://dotnet.microsoft.com/en-us/download/dotnet">Download .NET</a>，這邊可看到.Net不同版本，包含每個版本的發布時間(Latest release date)以及結束支援時間(End of support)。點擊.Net 5.0進行下一步。<br><img src="/blog/2022/04/06/dotent-install/dotnet_download_website_1.png" alt="Download .NET"></p>
+<p>這邊可看到目前最新SDK版本是5.0.406，這邊選擇windows x64，點選下載。另外如果有要把webapi架設在IIS上，可在右邊Runtime選擇windows x64下載安裝<br><img src="/blog/2022/04/06/dotent-install/dotnet_download_website_2.png" alt="Download .NET"></p>
+<h2 id="安裝-Net-SDK"><a href="#安裝-Net-SDK" class="headerlink" title="安裝.Net SDK"></a>安裝.Net SDK</h2><p>下載完成點擊執行後，開始安裝<br><img src="/blog/2022/04/06/dotent-install/dotnet_install_1.png" alt="Install .NET"></p>
+<p>安裝成功畫面<br><img src="/blog/2022/04/06/dotent-install/dotnet_install_2.png" alt="Install .NET"></p>
+<h2 id="測試dotnet-cli"><a href="#測試dotnet-cli" class="headerlink" title="測試dotnet cli"></a>測試dotnet cli</h2><p>開啟windows PowerShell或者cmd，輸入以下指令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet --info</span><br></pre></td></tr></table></figure>
+<p>這邊可看到dotnet詳細資訊，預設使用最新版本，也可以看到之前安裝過的版本</p>
+<p><img src="/blog/2022/04/06/dotent-install/dotnet_cli_1.png" alt=".NET Info"></p>
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><p>作業系統為Ubuntu 20.04(LTS)版本<br>可至此<a href="https://docs.microsoft.com/zh-tw/dotnet/core/install/linux-ubuntu#supported-distributions">連結</a>查看版本是否有支援.Net SDK</p>
+<h2 id="安裝-Net-SDK-1"><a href="#安裝-Net-SDK-1" class="headerlink" title="安裝.Net SDK"></a>安裝.Net SDK</h2><p>建立Microsoft 套件簽署金鑰</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb</span><br><span class="line">sudo dpkg -i packages-microsoft-prod.deb</span><br><span class="line">rm packages-microsoft-prod.deb</span><br></pre></td></tr></table></figure>
+
+<p>安裝SDK，最後面可修改要安裝的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update; \</span><br><span class="line">  sudo apt-get install -y apt-transport-https &amp;&amp; \</span><br><span class="line">  sudo apt-get update &amp;&amp; \</span><br><span class="line">  sudo apt-get install -y dotnet-sdk-5.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="測試dotnet-cli-1"><a href="#測試dotnet-cli-1" class="headerlink" title="測試dotnet cli"></a>測試dotnet cli</h2><p>開啟terminal，輸入以下指令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet --info</span><br></pre></td></tr></table></figure>
+
+<p>參考資料<br><a href="https://docs.microsoft.com/zh-tw/dotnet/core/install/linux-ubuntu#2004-">https://docs.microsoft.com/zh-tw/dotnet/core/install/linux-ubuntu#2004-</a></p>
+]]></content>
+      <categories>
+        <category>.net</category>
+      </categories>
+      <tags>
+        <tag>dotnet</tag>
+        <tag>.net</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>設定VS Code用於開發C#</title>
+    <url>/blog/2022/04/06/customizing-vscode-for-csharp-dev/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此篇講解設定VS Code用於C#的開發</p>
+<span id="more"></span>
+
+<h1 id="安裝Visual-Studio-Code"><a href="#安裝Visual-Studio-Code" class="headerlink" title="安裝Visual Studio Code"></a>安裝Visual Studio Code</h1><p>安裝<a href="https://code.visualstudio.com/">VS Code</a></p>
+<h1 id="Extensions-延伸模組"><a href="#Extensions-延伸模組" class="headerlink" title="Extensions(延伸模組)"></a>Extensions(延伸模組)</h1><p>在開啟VS Code之後，至左方點擊延伸模組或者按下Ctrl+Shift+x<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_1.png" alt="VS Code Extensions"></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h2><p>搜尋”C#”，點選第一個進行安裝<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_2.png" alt="VS Code Extensions C#"></p>
+<h2 id="C-XML-Documentation-Comments"><a href="#C-XML-Documentation-Comments" class="headerlink" title="C# XML Documentation Comments"></a>C# XML Documentation Comments</h2><p>此套件可快速建立XML註解，只需要輸入”&#x2F;&#x2F;&#x2F;“</p>
+<h2 id="C-Extensions"><a href="#C-Extensions" class="headerlink" title="C# Extensions"></a>C# Extensions</h2><p>此套件可快速建立class或者interface，在資料夾上右鍵新增，可選用</p>
+<h1 id="Settings設定"><a href="#Settings設定" class="headerlink" title="Settings設定"></a>Settings設定</h1><p>至左方點擊管理(Manage) &#x3D;&gt; 設定(Settings)或者按下Ctrl+,<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_1.png" alt="VS Code Settings"></p>
+<p>輸入”place open brace on new line”勾選前兩項，此功能為在按下儲存(Alt+s)，可將C#程式碼的大括弧自動格式化</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">place open brace on new line</span><br></pre></td></tr></table></figure>
+<p><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_2.png" alt="VS Code Settings"></p>
+<p>輸入”format on save”並勾選第一項，目的為確保程式碼格式化後存入文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">format on save</span><br></pre></td></tr></table></figure>
+<p><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_3.png" alt="VS Code Settings"></p>
+<h1 id="Auto-Save"><a href="#Auto-Save" class="headerlink" title="Auto Save"></a>Auto Save</h1><p>在編寫程式時，可即時儲存文件<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_autosave.png" alt="VS Code Auto Save"></p>
+]]></content>
+      <categories>
+        <category>vscode</category>
+        <category>.net</category>
+      </categories>
+      <tags>
+        <tag>dotnet</tag>
+        <tag>.net</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用.Net建立Web API</title>
+    <url>/blog/2022/04/06/create-dotnet-webapi/</url>
+    <content><![CDATA[<p>此篇講解使用dotnet cli建立webapi</p>
+<span id="more"></span>
+
+<h1 id="建立新的Web-API專案"><a href="#建立新的Web-API專案" class="headerlink" title="建立新的Web API專案"></a>建立新的Web API專案</h1><p>先進入要建立的目錄底下，輸入以下指令<br>-n: 建立輸出的名稱。 如果未指定名稱，則會使用目前目錄的名稱。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd D:\dev</span><br><span class="line">$ dotnet new webapi -n DemoAPI</span><br></pre></td></tr></table></figure>
+
+<p>加入指定.Net版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet new webapi -n DemoAPI --framework net5.0</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#latest-versions">其他對應版本名稱</a><br><img src="/blog/2022/04/06/create-dotnet-webapi/dotnet_target_version.png" alt="dotnet target version"></p>
+<h1 id="開啟專案"><a href="#開啟專案" class="headerlink" title="開啟專案"></a>開啟專案</h1><p>使用vs code開啟專案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd DemoAPI</span><br><span class="line">$ code .</span><br></pre></td></tr></table></figure>
+
+<h1 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h1><p>當開啟VS Code專案時，右下角會出現是否加入建置及除錯提示，這邊選擇”Yes”<br><img src="/blog/2022/04/06/create-dotnet-webapi/dotnet_vscode_debug_1.png" alt="dotnet vscode debug message"></p>
+<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><p>可按下”F5”開始Debug或者至”執行與偵錯”按下”開始”<br><img src="/blog/2022/04/06/create-dotnet-webapi/dotnet_vscode_debug_2.png" alt="dotnet vscode debug"><br>在執行Debug模式時，會自動開啟瀏覽器，如果要取消此設定在.vscode &#x3D;&gt; launch.json &#x3D;&gt; 找到serverReadyAction，可以註解或刪除<br><img src="/blog/2022/04/06/create-dotnet-webapi/vscode_launch.png" alt="dotnet vscode debug"></p>
+<h1 id="專案介紹"><a href="#專案介紹" class="headerlink" title="專案介紹"></a>專案介紹</h1><p>DemoAPI.csproj &#x3D;&gt; 專案設定(SDK版本、套件、加入參考…)<br>Program.cs &#x3D;&gt; 程式入口點<br>Startup.cs &#x3D;&gt; 設定middleware(DI注入、cors、swagger…)<br>appsettings.json &#x3D;&gt; 用來放DB連線字串以及Server設定字串…<br>Controller &#x3D;&gt; 開發API的地方</p>
+<h2 id="設定localhost-port"><a href="#設定localhost-port" class="headerlink" title="設定localhost port"></a>設定localhost port</h2><p>http預設使用5000 port，https預設使用5001 port，如果要修改port可至Properties &#x3D;&gt; launchSettings.json &#x3D;&gt; 找applicationUrl修改<br><img src="/blog/2022/04/06/create-dotnet-webapi/dotnet_webapi_launch_setting.png" alt="dotnet_webapi_launch_setting"></p>
+<h1 id="dotnet相關命令"><a href="#dotnet相關命令" class="headerlink" title="dotnet相關命令"></a>dotnet相關命令</h1><p>加入信任https開發憑證</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet dev-certs https --trust</span><br></pre></td></tr></table></figure>
+
+<p>加入gitignore檔案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet new gitignore</span><br></pre></td></tr></table></figure>
+
+<p>建置專案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet build</span><br></pre></td></tr></table></figure>
+
+<p>執行專案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ dotnet run</span><br></pre></td></tr></table></figure>
+
+<p>可至<a href="https://localhost:5001/">https://localhost:5001</a>查看是否執行成功<br>或者查看swagger文件<a href="https://localhost:5001/swagger">https://localhost:5001/swagger</a></p>
+]]></content>
+      <categories>
+        <category>.net</category>
+        <category>webapi</category>
+      </categories>
+      <tags>
+        <tag>dotnet</tag>
+        <tag>.net</tag>
+        <tag>webapi</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用.Net WebAPI 撰寫Swagger文件</title>
+    <url>/blog/2022/04/07/dotnet-webapi-swagger/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>目前.Net5 以上的 WebAPI 內建”Swashbuckle.AspNetCore”這個套件，主要是用來撰寫 Swagger，所以就來學習一下如何撰寫。</p>
+<span id="more"></span>
+
+<h1 id="安裝-Swagger"><a href="#安裝-Swagger" class="headerlink" title="安裝 Swagger"></a>安裝 Swagger</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dotnet add package Swashbuckle.AspNetCore</span><br></pre></td></tr></table></figure>
+
+<h1 id="文件標題設定"><a href="#文件標題設定" class="headerlink" title="文件標題設定"></a>文件標題設定</h1><p>文件標題設定包含標題、描述、版本等等，至.\Startup.cs 設定</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.AddSwaggerGen(options =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    options.SwaggerDoc(&quot;v1&quot;, new OpenApiInfo</span><br><span class="line">    &#123;</span><br><span class="line">        Title = &quot;Swagger範例&quot;,</span><br><span class="line">        Version = &quot;v1&quot;,</span><br><span class="line">        Description = &quot;swagger範例文件&quot;,</span><br><span class="line">        TermsOfService = new Uri(&quot;https://example.com/terms&quot;),</span><br><span class="line">        Contact = new OpenApiContact</span><br><span class="line">        &#123;</span><br><span class="line">            Name = &quot;Example Contact&quot;,</span><br><span class="line">            Url = new Uri(&quot;https://example.com/contact&quot;)</span><br><span class="line">        &#125;,</span><br><span class="line">        License = new OpenApiLicense</span><br><span class="line">        &#123;</span><br><span class="line">            Name = &quot;Example License&quot;,</span><br><span class="line">            Url = new Uri(&quot;https://example.com/license&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>效果圖<br><img src="/blog/2022/04/07/dotnet-webapi-swagger/swagger_title.png" alt="swagger title"></p>
+<h1 id="Controller-設定"><a href="#Controller-設定" class="headerlink" title="Controller 設定"></a>Controller 設定</h1><p>加入 controller 描述(SwaggerTag)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[ApiController]</span><br><span class="line">[Route(&quot;api/[controller]&quot;)]</span><br><span class="line">[SwaggerTag(&quot;產品增刪改查&quot;)]</span><br><span class="line">public class ProductController : ControllerBase</span><br></pre></td></tr></table></figure>
+
+<p>忽略此 controller 並不加入到 Swagger 文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[ApiExplorerSettings(IgnoreApi = true)]</span><br></pre></td></tr></table></figure>
+
+<h1 id="API-加入文字描述設定"><a href="#API-加入文字描述設定" class="headerlink" title="API 加入文字描述設定"></a>API 加入文字描述設定</h1><p>在 SwaggerDemo.csproj &#x3D;&gt; PropertyGroup 裡面加入以下兩行</p>
+<ul>
+<li>啟用 XML 註解</li>
+<li>忽略編譯時出現的警告</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;PropertyGroup&gt;</span><br><span class="line">  &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt;</span><br><span class="line">  &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt;</span><br><span class="line">&lt;/PropertyGroup&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在.\Startup.cs &#x3D;&gt; AddSwaggerGen 裡面加入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var xmlFilename = $&quot;&#123;Assembly.GetExecutingAssembly().GetName().Name&#125;.xml&quot;;</span><br><span class="line">options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));</span><br></pre></td></tr></table></figure>
+
+<h2 id="Controller-API-加入-XML-註解"><a href="#Controller-API-加入-XML-註解" class="headerlink" title="Controller API 加入 XML 註解"></a>Controller API 加入 XML 註解</h2><ul>
+<li>summary &#x3D;&gt; API 功能描述</li>
+<li>param &#x3D;&gt; 輸入參數描述</li>
+<li>remarks &#x3D;&gt; 備註</li>
+<li>response code &#x3D;&gt; 回傳代碼描述</li>
+</ul>
+<p>Swagger API 回傳預設是 200，可以使用 ProducesResponseType 屬性做設定</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 透過產品id取得產品資料</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;id&quot;&gt;產品id&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">/// &lt;remarks&gt;備註描述&lt;/remarks&gt;</span><br><span class="line">/// &lt;response code=&quot;200&quot;&gt;取得產品資料&lt;/response&gt;</span><br><span class="line">/// &lt;response code=&quot;404&quot;&gt;沒有資料&lt;/response&gt;</span><br><span class="line">[HttpGet(&quot;&#123;id&#125;&quot;)]</span><br><span class="line">[ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]</span><br><span class="line">[ProducesResponseType(StatusCodes.Status404NotFound)]</span><br><span class="line">public ActionResult&lt;ProductDto&gt; GetById(Guid id)</span><br></pre></td></tr></table></figure>
+
+<p>效果圖 1<br><img src="/blog/2022/04/07/dotnet-webapi-swagger/swagger_api_description_1.png" alt="swagger_api_description_1"></p>
+<p>效果圖 2<br><img src="/blog/2022/04/07/dotnet-webapi-swagger/swagger_api_description_2.png" alt="swagger_api_description_2"></p>
+<h1 id="建立標籤"><a href="#建立標籤" class="headerlink" title="建立標籤"></a>建立標籤</h1><p>當專案的 API 變得越來越多時，可以利用標籤來分門別類</p>
+<h2 id="安裝-Swashbuckle-AspNetCore-Annotations"><a href="#安裝-Swashbuckle-AspNetCore-Annotations" class="headerlink" title="安裝 Swashbuckle.AspNetCore.Annotations"></a>安裝 Swashbuckle.AspNetCore.Annotations</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dotnet add package Swashbuckle.AspNetCore.Annotations</span><br></pre></td></tr></table></figure>
+
+<h2 id="啟動-Annotations"><a href="#啟動-Annotations" class="headerlink" title="啟動 Annotations"></a>啟動 Annotations</h2><p>在.\Startup.cs &#x3D;&gt; AddSwaggerGen 裡面加入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">options.EnableAnnotations();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Controller-API-設定"><a href="#Controller-API-設定" class="headerlink" title="Controller API 設定"></a>Controller API 設定</h2><p>加入 SwaggerOperation 屬性設定，並提供以下欄位設定</p>
+<ul>
+<li>Summary &#x3D;&gt; 等同於 summary</li>
+<li>Description &#x3D;&gt; 等同於 remarks</li>
+<li>OperationId &#x3D;&gt; 唯一 ID</li>
+<li>Tags &#x3D;&gt; 群組化，可放置多個群組</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[HttpGet(&quot;&#123;id&#125;&quot;)]</span><br><span class="line">[SwaggerOperation(</span><br><span class="line">    Summary = &quot;透過產品id取得產品資料&quot;,</span><br><span class="line">    Description = &quot;描述&quot;,</span><br><span class="line">    OperationId = &quot;GetProductById&quot;,</span><br><span class="line">    Tags = new[] &#123; &quot;產品相關&quot;, &quot;Product&quot; &#125;</span><br><span class="line">)]</span><br><span class="line">public ActionResult&lt;ProductDto&gt; GetById(Guid id)</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果圖"><a href="#效果圖" class="headerlink" title="效果圖"></a>效果圖</h2><p><img src="/blog/2022/04/07/dotnet-webapi-swagger/swagger_api_description_3.png" alt="swagger_api_description_2"></p>
+<h2 id="SwaggerResponse"><a href="#SwaggerResponse" class="headerlink" title="SwaggerResponse"></a>SwaggerResponse</h2><p>此套件也有提供 SwaggerResponse 屬性，整合了回傳代碼、描述及資料</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/// &lt;response code=&quot;400&quot;&gt;資料欄位有誤&lt;/response&gt;</span><br><span class="line">[ProducesResponseType(StatusCodes.Status400BadRequest)]</span><br><span class="line"></span><br><span class="line">等同於</span><br><span class="line"></span><br><span class="line">[SwaggerResponse(400, &quot;資料欄位有誤&quot;)]</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他設定"><a href="#其他設定" class="headerlink" title="其他設定"></a>其他設定</h1><ul>
+<li>RoutePrefix &#x3D;&gt; 重寫 swagger URL <a href="https://localhost:5001/swagger">https://localhost:5001/swagger</a> 改為 <a href="https://localhost:5001/">https://localhost:5001</a></li>
+<li>DocExpansion &#x3D;&gt; 標籤收合設定</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.UseSwaggerUI(options =&gt;</span><br><span class="line">&#123;</span><br><span class="line">    options.SwaggerEndpoint(&quot;/swagger/v1/swagger.json&quot;, &quot;SwaggerDemo v1&quot;);</span><br><span class="line">    options.RoutePrefix = string.Empty;</span><br><span class="line">    options.DocExpansion(DocExpansion.None);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="模組化"><a href="#模組化" class="headerlink" title="模組化"></a>模組化</h1><p>為了提高程式可讀性，從 Startup.cs 把 Swagger 分離出來</p>
+<ul>
+<li>先建立 Swagger 資料夾</li>
+<li>建立 ServiceExtension.cs</li>
+<li>把 AddSwaggerGen 移動至 ServiceExtension</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public static class ServiceExtension</span><br><span class="line">&#123;</span><br><span class="line">    public static IServiceCollection AddSwagger(this IServiceCollection services)</span><br><span class="line">    &#123;</span><br><span class="line">        // swagger設定程式</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>呼叫 AddSwagger 方法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">services.AddSwagger();</span><br></pre></td></tr></table></figure>
+
+<h1 id="範例代碼"><a href="#範例代碼" class="headerlink" title="範例代碼"></a>範例代碼</h1><p><a href="https://github.com/yfz34/SwaggerDemo">https://github.com/yfz34/SwaggerDemo</a></p>
+<h1 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h1><p><a href="https://github.com/domaindrivendev/Swashbuckle.AspNetCore">https://github.com/domaindrivendev/Swashbuckle.AspNetCore</a><br><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/getting-started-with-swashbuckle">https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/getting-started-with-swashbuckle</a></p>
+]]></content>
+      <categories>
+        <category>.net</category>
+        <category>webapi</category>
+        <category>swagger</category>
+      </categories>
+      <tags>
+        <tag>.net</tag>
+        <tag>webapi</tag>
+        <tag>swagger</tag>
+      </tags>
+  </entry>
 </search>

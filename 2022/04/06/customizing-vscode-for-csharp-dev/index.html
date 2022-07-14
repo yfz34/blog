@@ -20,17 +20,29 @@
     var CONFIG = {"hostname":"yfz34.github.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="全端工程師">
-<meta property="og:type" content="website">
-<meta property="og:title" content="瘋技術">
-<meta property="og:url" content="https://yfz34.github.io/blog/tags/github-pages/index.html">
+  <meta name="description" content="前言此篇講解設定VS Code用於C#的開發">
+<meta property="og:type" content="article">
+<meta property="og:title" content="設定VS Code用於開發C#">
+<meta property="og:url" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/index.html">
 <meta property="og:site_name" content="瘋技術">
-<meta property="og:description" content="全端工程師">
+<meta property="og:description" content="前言此篇講解設定VS Code用於C#的開發">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_1.png">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_2.png">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_1.png">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_2.png">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_3.png">
+<meta property="og:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_autosave.png">
+<meta property="article:published_time" content="2022-04-06T08:53:05.000Z">
+<meta property="article:modified_time" content="2022-04-07T09:11:24.391Z">
 <meta property="article:author" content="Allen Zhou">
+<meta property="article:tag" content="dotnet">
+<meta property="article:tag" content=".net">
+<meta property="article:tag" content="vscode">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_1.png">
 
-<link rel="canonical" href="https://yfz34.github.io/blog/tags/github-pages/">
+<link rel="canonical" href="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/">
 
 
 <script id="page-configurations">
@@ -38,12 +50,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: github pages | 瘋技術</title>
+  <title>設定VS Code用於開發C# | 瘋技術</title>
   
 
 
@@ -185,51 +197,119 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">github pages
-          <small>標籤</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yfz34.github.io/blog/2022/04/06/customizing-vscode-for-csharp-dev/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Allen Zhou">
+      <meta itemprop="description" content="全端工程師">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="瘋技術">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          設定VS Code用於開發C#
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2022-04-06 16:53:05" itemprop="dateCreated datePublished" datetime="2022-04-06T16:53:05+08:00">2022-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-04-07 17:11:24" itemprop="dateModified" datetime="2022-04-07T17:11:24+08:00">2022-04-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/vscode/" itemprop="url" rel="index"><span itemprop="name">vscode</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/vscode/net/" itemprop="url" rel="index"><span itemprop="name">.net</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>此篇講解設定VS Code用於C#的開發</p>
+<span id="more"></span>
+
+<h1 id="安裝Visual-Studio-Code"><a href="#安裝Visual-Studio-Code" class="headerlink" title="安裝Visual Studio Code"></a>安裝Visual Studio Code</h1><p>安裝<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VS Code</a></p>
+<h1 id="Extensions-延伸模組"><a href="#Extensions-延伸模組" class="headerlink" title="Extensions(延伸模組)"></a>Extensions(延伸模組)</h1><p>在開啟VS Code之後，至左方點擊延伸模組或者按下Ctrl+Shift+x<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_1.png" alt="VS Code Extensions"></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h2><p>搜尋”C#”，點選第一個進行安裝<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_extensions_2.png" alt="VS Code Extensions C#"></p>
+<h2 id="C-XML-Documentation-Comments"><a href="#C-XML-Documentation-Comments" class="headerlink" title="C# XML Documentation Comments"></a>C# XML Documentation Comments</h2><p>此套件可快速建立XML註解，只需要輸入”&#x2F;&#x2F;&#x2F;“</p>
+<h2 id="C-Extensions"><a href="#C-Extensions" class="headerlink" title="C# Extensions"></a>C# Extensions</h2><p>此套件可快速建立class或者interface，在資料夾上右鍵新增，可選用</p>
+<h1 id="Settings設定"><a href="#Settings設定" class="headerlink" title="Settings設定"></a>Settings設定</h1><p>至左方點擊管理(Manage) &#x3D;&gt; 設定(Settings)或者按下Ctrl+,<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_1.png" alt="VS Code Settings"></p>
+<p>輸入”place open brace on new line”勾選前兩項，此功能為在按下儲存(Alt+s)，可將C#程式碼的大括弧自動格式化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">place open brace on new line</span><br></pre></td></tr></table></figure>
+<p><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_2.png" alt="VS Code Settings"></p>
+<p>輸入”format on save”並勾選第一項，目的為確保程式碼格式化後存入文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">format on save</span><br></pre></td></tr></table></figure>
+<p><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_settings_3.png" alt="VS Code Settings"></p>
+<h1 id="Auto-Save"><a href="#Auto-Save" class="headerlink" title="Auto Save"></a>Auto Save</h1><p>在編寫程式時，可即時儲存文件<br><img src="/blog/2022/04/06/customizing-vscode-for-csharp-dev/vscode_autosave.png" alt="VS Code Auto Save"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-03-01T16:53:17+08:00"
-              content="2022-03-01">
-          03-01
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/dotnet/" rel="tag"># dotnet</a>
+              <a href="/blog/tags/net/" rel="tag"># .net</a>
+              <a href="/blog/tags/vscode/" rel="tag"># vscode</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/blog/2022/03/01/hexo_deploy_github/" itemprop="url">
-            <span itemprop="name">使用Hexo部署至 GitHub Pages</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2022/04/06/dotent-install/" rel="prev" title="安裝.Net SDK">
+      <i class="fa fa-chevron-left"></i> 安裝.Net SDK
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/04/06/create-dotnet-webapi/" rel="next" title="使用.Net建立Web API">
+      使用.Net建立Web API <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -282,6 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DVisual-Studio-Code"><span class="nav-number">2.</span> <span class="nav-text">安裝Visual Studio Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extensions-%E5%BB%B6%E4%BC%B8%E6%A8%A1%E7%B5%84"><span class="nav-number">3.</span> <span class="nav-text">Extensions(延伸模組)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">3.1.</span> <span class="nav-text">C#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-XML-Documentation-Comments"><span class="nav-number">3.2.</span> <span class="nav-text">C# XML Documentation Comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Extensions"><span class="nav-number">3.3.</span> <span class="nav-text">C# Extensions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Settings%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.</span> <span class="nav-text">Settings設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Auto-Save"><span class="nav-number">5.</span> <span class="nav-text">Auto Save</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
